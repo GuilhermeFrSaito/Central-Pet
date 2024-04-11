@@ -1,0 +1,15 @@
+.footer {
+    background: linear-gradient(to right, #ffffff, #6fe2f1); /* Gradient background from white to very light blue */
+    background-size: 50% 100%;
+    background-position: center right;
+    background-repeat: no-repeat;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

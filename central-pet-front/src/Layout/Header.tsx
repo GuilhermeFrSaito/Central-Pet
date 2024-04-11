@@ -1,5 +1,6 @@
 import dog from "../assets/image/dog.png";
 import "./Header.css";
+import DropdownMenu from "../Components/DropdownMenu";
 
 const Header = () => {
   return (
@@ -9,13 +10,12 @@ const Header = () => {
         <p>Pet Central</p>
       </div>
       <nav className="nav">
-        <ul>
-          <li>
-            <a href="/">Pets</a>
-          </li>
-          <li>
-            <a href="/">Instituicoes</a>
-          </li>
+        <ul className="nav-menu">
+          <DropdownMenu title="Pets" items={["Procurar", "Cadastrar"]} />
+          <DropdownMenu
+            title="Instituições"
+            items={["Consultar", "Cadastrar Nova"]}
+          />
         </ul>
       </nav>
       <div className="auth">
