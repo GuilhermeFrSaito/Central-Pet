@@ -11,9 +11,10 @@
     background-size: 50% 100%;
     background-position: left bottom;
     background-repeat: no-repeat;
-    height: 20%;
-    max-height: 20%;
+    height: 7%;
+    max-height: 10%;
     width: 100%;
+    position: fixed;
 }
 
 .logo {
@@ -54,6 +55,7 @@
 }
 
 .nav-menu{
+    text-decoration: none;
     background: none;
     list-style-type: none;
     display: flex;
@@ -62,12 +64,14 @@
 }
 
 .nav-menu li {
+    text-decoration: none;
     position: relative;
     margin-left: 10px;
     margin-right: 20px;
 }
 
 .dropdown-menu {
+    text-decoration: none;
     list-style-type: none;
     background-color: none;
     padding: 0;
@@ -84,6 +88,7 @@
 }
 
 .dropdown-menu li {
+    text-decoration: none;
     padding: 0.5em 1em;
     white-space: nowrap;
     width: auto;

@@ -1,0 +1,22 @@
+.side-panel {
+    position: fixed;
+    display: block;
+    top: 10%;
+    right: 0;
+    height: 100%;
+    max-width: 15%;
+    padding: 5em;
+}
+
+.report {
+    margin-bottom: 1em; /* Add margin between report sections */
+    background-color: #ddddff;
+    padding-right: 10px;
+}
+
+.report p {
+    margin: 0; /* Remove default margin for paragraphs */
+    font-size: 1.2em; /* Adjust font size for condensed text */
+    line-height: 1.2; /* Adjust line height for spacing */
+    padding: 3em;
+}
