@@ -4,14 +4,16 @@
     align-items: center;
     justify-items: start;
     justify-content: space-between;
-    border: none;
+    border-bottom: 0.1em solid #ccc;
     padding: 1em;
     margin-top: 0;
+    margin-bottom: 0;
+    bottom: 89vh;
     background: linear-gradient(to right, #6fe2f1, #ffffff); /* Gradient background from white to very light blue */
     background-size: 50% 100%;
     background-position: left bottom;
     background-repeat: no-repeat;
-    height: 7%;
+    height: 8vh;
     max-height: 10%;
     width: 100%;
     position: fixed;
@@ -52,6 +54,7 @@
     display: inline-block;
     align-items: center;
     margin-left: 3em;
+    background: none;
 }
 
 .nav-menu{
@@ -73,6 +76,7 @@
 .dropdown-menu {
     text-decoration: none;
     list-style-type: none;
+    background: none;
     background-color: none;
     padding: 0;
     margin: 0;
@@ -85,10 +89,15 @@
 
 .dropdown.open .dropdown-menu {
     display: block;
+    border-bottom: 1px solid #333;
+    background: #fff;
 }
 
 .dropdown-menu li {
     text-decoration: none;
+    border: 1px solid #333;
+    border-bottom: none;
+    margin: 0;
     padding: 0.5em 1em;
     white-space: nowrap;
     width: auto;

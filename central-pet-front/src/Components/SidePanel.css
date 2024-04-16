@@ -1,22 +1,29 @@
 .side-panel {
     position: fixed;
     display: block;
-    top: 10%;
+    top: 11vh;
     right: 0;
     height: 100%;
+    box-sizing: content-box;
+    max-height: 70%;
     max-width: 15%;
-    padding: 5em;
+    width: 13%;
+    padding: 4em;
+    border-left: 0.1vw solid #ccc;
+    max-height: calc(93vh - 7vh);
 }
 
 .report {
-    margin-bottom: 1em; /* Add margin between report sections */
+    margin-bottom: 3em; /* Add margin between report sections */
     background-color: #ddddff;
-    padding-right: 10px;
+    padding-top: 0;
+    padding-right: 0.5em;
+    box-sizing: border-box;
 }
 
 .report p {
     margin: 0; /* Remove default margin for paragraphs */
     font-size: 1.2em; /* Adjust font size for condensed text */
     line-height: 1.2; /* Adjust line height for spacing */
-    padding: 3em;
+    padding: 2.5em;
 }
