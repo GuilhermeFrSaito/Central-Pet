@@ -2,6 +2,6 @@
     text-decoration: none;
 }
 
-li a {
+li a::before {
     text-decoration: none;
 }

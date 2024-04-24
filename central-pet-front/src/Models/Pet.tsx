@@ -10,7 +10,7 @@ const petsData: Pet[] = [
     observacoes: "Needs regular exercise and socialization",
   },
   {
-    id: 1,
+    id: 2,
     name: "Chuck",
     photo: "https://example.com/chuck.jpg",
     caracteristicasFisicas: "Golden retriever, 3 years old, male",
@@ -18,7 +18,7 @@ const petsData: Pet[] = [
     observacoes: "Needs regular exercise and socialization",
   },
   {
-    id: 2,
+    id: 3,
     name: "Portos",
     photo: "https://example.com/portos.jpg",
     caracteristicasFisicas: "Golden retriever, 3 years old, male",
@@ -26,7 +26,7 @@ const petsData: Pet[] = [
     observacoes: "Needs regular exercise and socialization",
   },
   {
-    id: 3,
+    id: 4,
     name: "Lady",
     photo: "https://example.com/lady.jpg",
     caracteristicasFisicas: "Golden retriever, 3 years old, male",
@@ -34,7 +34,7 @@ const petsData: Pet[] = [
     observacoes: "Needs regular exercise and socialization",
   },
   {
-    id: 4,
+    id: 5,
     name: "Pringles",
     photo: "https://example.com/pringles.jpg",
     caracteristicasFisicas: "Golden retriever, 3 years old, male",
@@ -42,7 +42,7 @@ const petsData: Pet[] = [
     observacoes: "Needs regular exercise and socialization",
   },
   {
-    id: 5,
+    id: 6,
     name: "Max",
     photo: "https://example.com/max.jpg",
     caracteristicasFisicas: "Golden retriever, 3 years old, male",

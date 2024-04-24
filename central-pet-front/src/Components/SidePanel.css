@@ -1,16 +1,19 @@
-.side-panel {
+:root {
+    --header-height: 11vh; /* Adjust as needed */
+    --footer-height: 7vh;
+    --main-content-width: 75vw;
+  }
+
+.side-panel-content {
     position: fixed;
     display: block;
-    top: 11vh;
-    right: 0;
-    height: 100%;
+    top: var(--header-height);
+    bottom: var(--footer-height);
+    left: var(--main-content-width);
     box-sizing: content-box;
-    max-height: 70%;
-    max-width: 15%;
-    width: 13%;
-    padding: 4em;
+    width: calc(100vw - var(--main-content-width));
+    padding: 2em;
     border-left: 0.1vw solid #ccc;
-    max-height: calc(93vh - 7vh);
 }
 
 .report {
