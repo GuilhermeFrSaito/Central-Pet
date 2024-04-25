@@ -1,7 +1,7 @@
 :root {
   --header-height: 15vh; /* Adjust as needed */
   --footer-height: 7vh;
-  --main-content-width: 70vw;
+  --main-content-width: 75vw;
   --app-max-width: 100vw;
 }
 
@@ -14,32 +14,28 @@ body {
 .app-container {
   display: grid;
   grid-template-rows: var(--header-height) 1fr var(--footer-height);
-  grid-template-columns: 1fr 20%; /* Adjust the side panel width as needed */
+  grid-template-columns: var(--main-content-width) auto; /* Adjust the side panel width as needed */
   min-height: 100vh;
 }
 
 .main-content {
   grid-row: 2 / 3; /* Updated grid row value */
   grid-column: 1 / 2; /* Updated grid column value */
-  padding: 1em 2em;
-  width: var(--main-content-width);
+  padding: 1em;
 }
 
 /* Styles for Header, Footer, SidePanel go here */
 
+.side-panel {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  padding: 1em;
+  border-left: 0.1em solid #ccc;
+}
+
 .headerSection {
   height: var(--header-height);
   flex: 0 0 auto; /* Fixed height for header */
-}
-
-.sidePanel {
-  position: fixed;
-  flex-basis: 20%;
-  max-width: calc(var(--app-max-width) - var(--main-content-width));
-  max-height: calc(100vh - var(--header-height) - var(--footer-height));
-  overflow: auto; /* Allow side panel to scroll if content exceeds height */
-  top: var(--header-height);
-  bottom: var(--footer-height);
 }
 
 .footer {

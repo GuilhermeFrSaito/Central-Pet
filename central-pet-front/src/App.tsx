@@ -24,8 +24,12 @@ const App: React.FC = () => {
       <div className="main-content">
         <MainPage />
       </div>
-      <SidePanel />
-      <Footer />
+      <div className="side-panel">
+        <SidePanel />
+      </div>
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 };
