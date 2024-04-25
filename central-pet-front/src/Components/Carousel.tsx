@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable no-debugger */
+import React, { useEffect, useState } from "react";
 import "./Carousel.css";
 import { Pet } from "../Models/Types";
 
@@ -7,19 +8,48 @@ type CarouselProps = {
 };
 
 const Carousel: React.FC<CarouselProps> = ({ petsData }) => {
+  const [currentPetIndex, setCurrentPetIndex] = useState(0);
+
+  // const goToNextPet = () => {
+  //   setCurrentPetIndex((prevIndex) => (prevIndex + 1) % petsData.length);
+  // };
+
+  // const goToPreviousPet = () => {
+  //   setCurrentPetIndex(
+  //     (prevIndex) => (prevIndex - 1 + petsData.length) % petsData.length
+  //   );
+  // };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPetIndex((prevIndex) => (prevIndex + 1) % petsData.length);
+    }, 5000); // Change pet every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [petsData.length]);
+
   return (
     <div className="carousel">
-      <h2>Latest Pets</h2>
       <div className="carousel-container">
-        {petsData.map((pet) => (
-          <div key={pet.id} className="carousel-item">
-            <img src={pet.photo} alt={pet.name} />
-            <h3>{pet.name}</h3>
-            <p>{pet.caracteristicasFisicas}</p>
-            {/* Add more pet details as needed */}
-          </div>
+        {petsData.map((pet, index) => (
+          <>
+            <div
+              key={index}
+              className={`carousel-item ${
+                index === currentPetIndex ? "active" : ""
+              }`}
+            >
+              <h3>{pet.name}</h3>
+              <img src={pet.photo} alt={pet.name} />
+              <p>{pet.caracteristicasFisicas}</p>
+            </div>
+          </>
         ))}
       </div>
+      {/* <div className="controls">
+        <button onClick={goToPreviousPet}>Previous</button>
+        <button onClick={goToNextPet}>Next</button>
+      </div> */}
     </div>
   );
 };

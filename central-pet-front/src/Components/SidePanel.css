@@ -1,16 +1,5 @@
-.side-panel {
-    position: fixed;
-    display: block;
-    top: 11vh;
-    right: 0;
-    height: 100%;
-    box-sizing: content-box;
-    max-height: 70%;
-    max-width: 15%;
-    width: 13%;
-    padding: 4em;
-    border-left: 0.1vw solid #ccc;
-    max-height: calc(93vh - 7vh);
+.side-panel-content {
+    padding: 1.5em;
 }
 
 .report {

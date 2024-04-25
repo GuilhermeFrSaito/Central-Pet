@@ -2,7 +2,7 @@ import "./SidePanel.css";
 
 const SidePanel = () => {
   return (
-    <div className="side-panel">
+    <div className="side-panel-content">
       <div className="dogs-report report">
         <p>We have 123 Dogs registered in our databases.</p>
       </div>
