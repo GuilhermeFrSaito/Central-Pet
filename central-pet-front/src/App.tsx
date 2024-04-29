@@ -1,36 +1,49 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Footer from "./Layout/Footer";
-import Header from "./Layout/Header";
-import SidePanel from "./Components/SidePanel";
-import MainPage from "./Pages/MainPage";
-import { useEffect, useRef } from "react";
+import Layout from "./Layout/Layout";
+import MainPage from "@/Pages/MainPage";
+import RegisterPage from "@/Pages/RegisterPage/RegisterPage";
+import LoginPage from "@/Pages/LoginPage/LoginPage";
+import NotFoundPage from "@/Pages/NotFoundPage/NotFoundPage";
 
 const App: React.FC = () => {
-  const headerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (headerRef.current) {
-      const headerHeight = headerRef.current.clientHeight;
-      document.documentElement.style.setProperty(
-        "--header-height",
-        `${headerHeight}`
-      );
-    }
-  }, []);
-
   return (
-    <div className="app-container">
-      <Header />
-      <div className="main-content">
-        <MainPage />
-      </div>
-      <div className="side-panel">
-        <SidePanel />
-      </div>
-      <div className="footer">
-        <Footer />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          Component={() => (
+            <Layout>
+              <MainPage />
+            </Layout>
+          )}
+        />
+        <Route
+          path="/register"
+          Component={() => (
+            <Layout>
+              <RegisterPage />
+            </Layout>
+          )}
+        />
+        <Route
+          path="/login"
+          Component={() => (
+            <Layout>
+              <LoginPage />
+            </Layout>
+          )}
+        />
+        <Route
+          path="*"
+          Component={() => (
+            <Layout>
+              <NotFoundPage />
+            </Layout>
+          )}
+        />
+      </Routes>
+    </Router>
   );
 };
 

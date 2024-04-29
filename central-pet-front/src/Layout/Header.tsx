@@ -1,20 +1,32 @@
 import dog from "../assets/image/dog.png";
 import "./Header.css";
 import DropdownMenu from "../Components/DropdownMenu";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="header">
-      <div className="logo">
-        <img src={dog} />
-        <p>Pet Central</p>
-      </div>
+      <Link to="/" className="logoLink">
+        <div className="logo">
+          <img src={dog} />
+          <p>Central Pet</p>
+        </div>
+      </Link>
       <nav className="nav">
         <ul className="nav-menu">
-          <DropdownMenu title="Pets" items={["Procurar", "Cadastrar"]} />
+          <DropdownMenu
+            title="Pets"
+            items={[
+              { label: "Procurar", link: "" },
+              { label: "Cadastrar", link: "" },
+            ]}
+          />
           <DropdownMenu
             title="Instituições"
-            items={["Consultar", "Cadastrar Nova"]}
+            items={[
+              { label: "Consultar", link: "" },
+              { label: "Cadastrtar", link: "" },
+            ]}
           />
         </ul>
       </nav>

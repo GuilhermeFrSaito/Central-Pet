@@ -26,24 +26,22 @@ const Carousel: React.FC<CarouselProps> = ({ petsData }) => {
     }, 5000); // Change pet every 5 seconds
 
     return () => clearInterval(interval);
-  }, [petsData.length]);
+  }, [petsData]);
 
   return (
     <div className="carousel">
       <div className="carousel-container">
-        {petsData.map((pet, index) => (
-          <>
-            <div
-              key={index}
-              className={`carousel-item ${
-                index === currentPetIndex ? "active" : ""
-              }`}
-            >
-              <h3>{pet.name}</h3>
-              <img src={pet.photo} alt={pet.name} />
-              <p>{pet.caracteristicasFisicas}</p>
-            </div>
-          </>
+        {petsData.map((pet) => (
+          <div
+            key={pet.id}
+            className={`carousel-item ${
+              pet.id === petsData[currentPetIndex].id ? "active" : ""
+            }`}
+          >
+            <h3>{pet.name}</h3>
+            <img src={pet.photo} alt={pet.name} />
+            <p>{pet.caracteristicasFisicas}</p>
+          </div>
         ))}
       </div>
       {/* <div className="controls">

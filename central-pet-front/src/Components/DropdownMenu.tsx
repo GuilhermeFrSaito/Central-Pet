@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 type DropdownMenuProps = {
   title: string;
-  items: string[];
+  items: { label: string; link: string }[];
 };
 const DropdownMenu: React.FC<DropdownMenuProps> = ({ title, items }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +42,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ title, items }) => {
         <ul className="dropdown-menu">
           {items.map((item, index) => (
             <li key={index}>
-              <a href="#">{item}</a>
+              <Link to={item.link}>{item.label}</Link>
             </li>
           ))}
         </ul>

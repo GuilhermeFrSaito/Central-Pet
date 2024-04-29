@@ -1,0 +1,61 @@
+@import url('@/styles/variables.css');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.app-container {
+    display: grid;
+    grid-template-rows: var(--header-height) 1fr var(--footer-height);
+    grid-template-columns: var(--main-content-width) auto; /* Adjust the side panel width as needed */
+    min-height: 100vh;
+}
+
+.main-content {
+    grid-row: 2 / 3; /* Updated grid row value */
+    grid-column: 1 / 2; /* Updated grid column value */
+    padding: 1em;
+}
+
+/* Styles for Header, Footer, SidePanel go here */
+
+.side-panel {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    padding: 1em;
+    border-left: 0.1em solid #ccc;
+    max-width: 100%;
+}
+
+.headerSection {
+    height: var(--header-height);
+    flex: 0 0 auto; /* Fixed height for header */
+}
+
+.footer {
+    height: var(--footer-height);
+    flex: 0 0 auto; /* Fixed height for footer */
+}
+
+.headerSection,
+.mainContent,
+.footerSection {
+    z-index: 1; /* Ensure they are at the same z-index level */
+}
+
+.sidePanel {
+    z-index: 2; /* Place side panel above other sections */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .mainContent {
+        padding-top: 10%; /* Increase padding for smaller screens */
+    }
+
+    .sidePanel {
+        display: none; /* Hide side panel on smaller screens */
+    }
+}

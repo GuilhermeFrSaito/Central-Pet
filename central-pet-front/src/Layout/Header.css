@@ -52,6 +52,15 @@
     margin-bottom: 0;
 }
 
+.logoLink {
+    text-decoration: none;
+    color: black;
+}
+
+.logoLink::after {
+    color: black;
+}
+
 nav ul li a {
     text-decoration: none;
     color: black;
