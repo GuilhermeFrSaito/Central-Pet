@@ -1,0 +1,10 @@
+.main-page {
+    display: block;
+    height: 100vh;
+    position: relative;
+}
+
+.carousel-area {
+    height: 75vh;
+    position: relative;
+}

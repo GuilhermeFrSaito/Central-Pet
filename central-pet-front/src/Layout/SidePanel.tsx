@@ -1,8 +1,13 @@
 import "./SidePanel.css";
+import React from "react";
 
-const SidePanel = () => {
+interface SidePanelProps {
+  className?: string;
+}
+
+const SidePanel: React.FC<SidePanelProps> = ({ className }) => {
   return (
-    <div className="side-panel-content">
+    <div className={`side-panel ${className}`}>
       <div className="dogs-report report">
         <p>We have 123 Dogs registered in our databases.</p>
       </div>

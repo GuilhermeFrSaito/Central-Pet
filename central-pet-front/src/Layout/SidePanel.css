@@ -1,18 +1,17 @@
-.side-panel-content {
+.side-panel {
     padding: 1.5em;
 }
 
 .report {
-    margin-bottom: 3em; /* Add margin between report sections */
+    margin-bottom: 3em;
     background-color: #ddddff;
-    padding-top: 0;
-    padding-right: 0.5em;
+    padding: 0;
     box-sizing: border-box;
 }
 
 .report p {
-    margin: 0; /* Remove default margin for paragraphs */
-    font-size: 1.2em; /* Adjust font size for condensed text */
-    line-height: 1.2; /* Adjust line height for spacing */
+    margin: 0;
+    font-size: 1.2em;
+    line-height: 1.2;
     padding: 2.5em;
 }

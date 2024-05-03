@@ -2,6 +2,7 @@ import React, { useEffect, useRef, ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import SidePanel from "./SidePanel";
+import "./Layout.css";
 
 interface LayoutProps {
   children: ReactNode;
@@ -24,12 +25,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="app-container">
       <Header />
       <main className="main-content">{children}</main>
-      <div className="side-panel">
-        <SidePanel />
-      </div>
-      <div className="footer">
-        <Footer />
-      </div>
+      <SidePanel className="custom-side-panel" />
+      <Footer />
     </div>
   );
 };

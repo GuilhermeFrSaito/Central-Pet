@@ -31,11 +31,11 @@ const Carousel: React.FC<CarouselProps> = ({ petsData }) => {
   return (
     <div className="carousel">
       <div className="carousel-container">
-        {petsData.map((pet) => (
+        {petsData.map((pet, index) => (
           <div
             key={pet.id}
             className={`carousel-item ${
-              pet.id === petsData[currentPetIndex].id ? "active" : ""
+              index === currentPetIndex ? "active" : ""
             }`}
           >
             <h3>{pet.name}</h3>

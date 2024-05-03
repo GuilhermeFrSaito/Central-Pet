@@ -1,61 +1,62 @@
 @import url('@/styles/variables.css');
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 .app-container {
     display: grid;
-    grid-template-rows: var(--header-height) 1fr var(--footer-height);
-    grid-template-columns: var(--main-content-width) auto; /* Adjust the side panel width as needed */
+    grid-template-rows: var(--header-height) auto var(--footer-height);
+    grid-template-columns: 1fr auto;
     min-height: 100vh;
-}
-
-.main-content {
-    grid-row: 2 / 3; /* Updated grid row value */
-    grid-column: 1 / 2; /* Updated grid column value */
-    padding: 1em;
-}
-
-/* Styles for Header, Footer, SidePanel go here */
-
-.side-panel {
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
-    padding: 1em;
-    border-left: 0.1em solid #ccc;
+    margin: none;
     max-width: 100%;
 }
 
-.headerSection {
-    height: var(--header-height);
-    flex: 0 0 auto; /* Fixed height for header */
+.header {
+    position: fixed;
+    max-height: var(--header-height);
+    top: 0;
+    left: 0;
+    height: 8.2vh;
+    width: 100%;
+}
+
+.main-content {
+    position: fixed;
+    top: var(--header-height);
+    bottom: var(--footer-height);
+    max-width: var(--main-content-width);
+    max-height: calc(100vh - var(--header-height) - var(--footer-height));
+    right: var(--side-panel-width);
+    left: 0;
+    padding: 1em;
+    margin: 0;
+}
+
+.side-panel {
+    position: fixed;
+    max-height: calc(100vh - var(--header-height) - var(--footer-height));
+    max-width: calc(100vw - var(--main-content-width));
+    top: var(--header-height);
+    bottom: var(--footer-height);
+    left: var(--main-content-width);
+    padding: 3em;
+    border-left: 0.1em solid #ccc;
+    width: 20%;
+    overflow-y: hidden;
 }
 
 .footer {
-    height: var(--footer-height);
-    flex: 0 0 auto; /* Fixed height for footer */
-}
-
-.headerSection,
-.mainContent,
-.footerSection {
-    z-index: 1; /* Ensure they are at the same z-index level */
-}
-
-.sidePanel {
-    z-index: 2; /* Place side panel above other sections */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
     .mainContent {
-        padding-top: 10%; /* Increase padding for smaller screens */
+        padding-top: 10%;
     }
 
     .sidePanel {
-        display: none; /* Hide side panel on smaller screens */
+        display: none;
     }
 }
